@@ -154,9 +154,9 @@ with col[0]:
   average_sold = sales_df_selected['money'].mean()
   total_sold = sales_df_selected['money'].sum()
   diff_customers = sales_df_selected['card'].unique().shape[0]
-  st.metric(label="Total Beverages Sold", value=coffee_sold, delta= 15)
-  st.metric(label="Total Revenue", value=f"€ {total_sold}", delta= 1234)
-  st.metric(label="Average Price Sold", value=f"€ {round(average_sold,2)}", delta= 0.4)
+  st.metric(label="Total Beverages Sold", value=f"{coffee_sold:,.2f}", delta= 15)
+  st.metric(label="Total Revenue", value=f"€ {total_sold:,.2f}", delta= 1234)
+  st.metric(label="Average Price Sold", value=f"€ {round(average_sold,2):,.2f}", delta= 0.4)
 
 with col[1]:
     st.subheader("Revenue Over Time", divider="gray")
@@ -183,8 +183,8 @@ with col[0]:
     personal_df_grouped = sales_df_selected.groupby("card", as_index=False)["money"].sum()
     personal_df_grouped_count = sales_df_selected.groupby("card", as_index=False).size()
     personal_df_grouped_count.rename(columns={"size": "count"}, inplace=True)
-    st.metric(label="Total Unique Customers", value=diff_customers, delta=122)  
-    st.metric(label="Total Average Spend", value=f"€ {round(personal_df_grouped['money'].mean(),2)}", delta=2) 
+    st.metric(label="Total Unique Customers", value=f"{diff_customers:,.2f}", delta=122)  
+    st.metric(label="Total Average Spend", value=f"€ {round(personal_df_grouped['money'].mean(),2):,.2f}", delta=2) 
     st.metric(label="Total Average Returns", value=round(personal_df_grouped_count['count'].mean(),2), delta=-1) 
 
 with col[1]:
