@@ -155,8 +155,8 @@ with col[0]:
   total_sold = sales_df_selected['money'].sum()
   diff_customers = sales_df_selected['card'].unique().shape[0]
   st.metric(label="Total Beverages Sold", value=coffee_sold, delta= 15)
-  st.metric(label="Total Revenue", value=total_sold, delta= 1234)
-  st.metric(label="Average Price Sold", value=round(average_sold,2), delta= 0.4)
+  st.metric(label="Total Revenue", value=f"€ {total_sold}", delta= 1234)
+  st.metric(label="Average Price Sold", value=f"€ {round(average_sold,2)}", delta= 0.4)
 
 with col[1]:
     st.subheader("Revenue Over Time", divider="gray")
