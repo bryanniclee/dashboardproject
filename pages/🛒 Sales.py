@@ -184,8 +184,8 @@ with col[0]:
     personal_df_grouped_count = sales_df_selected.groupby("card", as_index=False).size()
     personal_df_grouped_count.rename(columns={"size": "count"}, inplace=True)
     st.metric(label="Total Unique Customers", value=diff_customers, delta=122)  
-    st.metric(label="Total Average Spend", value=round(personal_df_grouped['money'].mean(),2), delta=2) 
-    st.metric(label="Total Average Returns", value=round(personal_df_grouped_count['count'].mean(),2), delta=-1) 
+    st.metric(label="Total Average Spend", value=f"€ {round(personal_df_grouped['money'].mean(),2)}", delta=2) 
+    st.metric(label="Total Average Returns", value=f"€ {round(personal_df_grouped_count['count'].mean(),2)}", delta=-1) 
 
 with col[1]:
     sales_df_group = sales_df_selected.groupby("coffee_name", as_index=False).size()
