@@ -413,11 +413,11 @@ with col[0]:
   item_shift = float((-1 * evaluations_df_sorted['shippedquantity']).sum())
   total_balance = int(evaluations_df_sorted['balance'].sum())
   quantity_shift = int(item_shift)
-  st.metric(label="Total Item Balance", value=f"€ {total_balance}", delta=f"{quantity_shift:+}")
-  st.metric(label="Quantity Shift", value=quantity_shift, delta=f"{quantity_shift:+}")
+  st.metric(label="Total Item Balance", value=f"€ {total_balance:,.2f}", delta=f"{quantity_shift:+}")
+  st.metric(label="Quantity Shift", value=f"{quantity_shift:,.2f}", delta=f"{quantity_shift:+}")
   total_values = evaluations_df_sorted['totalvalue'].sum()
   st.metric(label="Total Value", value=f"€ {total_values:,.2f}", delta="+120,423")
-  st.metric(label="Items With 0 Stock", value=restock_df.shape[0], delta="+12")
+  st.metric(label="Items With 0 Stock", value=f"{restock_df.shape[0]:,.2f}", delta="+12")
 
 
 with col[1]:
@@ -537,9 +537,9 @@ col = st.columns((2, 3, 3), gap='medium')
 
 with col[0]:
     st.subheader("Metric KPIs", divider="gray")
-    st.metric(label="Total Transactions for today", value= Tdf_selected.shape[0 ], delta= 12) 
-    st.metric(label="Total Cost", value= f"€ {float(Tdf_selected['ActualCost'].sum())}", delta="-323")
-    st.metric(label="Quantity Shift", value=int(Tdf_selected['Qty'].sum()), delta="-122")
+    st.metric(label="Total Transactions for today", value= f"{Tdf_selected.shape[0]:,.2f}", delta= 12) 
+    st.metric(label="Total Cost", value= f"€ {float(Tdf_selected['ActualCost'].sum()):,.2f}", delta="-323")
+    st.metric(label="Quantity Shift", value=f"{int(Tdf_selected['Qty'].sum()):,.2f}", delta="-122")
 
 with col[1]:
     st.subheader("Quantity Shift Grouped by Item Type", divider="gray")
