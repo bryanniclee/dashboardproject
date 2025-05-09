@@ -1,0 +1,52 @@
+.st-key-red button {
+    background-color: rgb(178, 90, 163);
+    width: 300px;
+    height: 120px;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-top: 50px;
+    font-size: 24px;
+}   
+ 
+.st-key-red2 button {
+    background-color: rgb(178, 90, 163);
+    width: 300px;
+    height: 120px;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-top: 50px;
+} 
+
+.st-key-green button {
+    background-color: rgb(178, 90, 163);
+    width: 300px;
+    height: 120px;
+    border-radius: 10px;
+    margin-left: 200px;
+    margin-top: 50px;
+}   
+
+.st-key-green2 button {
+    background-color: rgb(178, 90, 163);
+    width: 300px;
+    height: 120px;
+    border-radius: 10px;
+    margin-left: 200px;
+    margin-top: 50px;
+}   
+
+.st-key-red button p{
+    font-size: 21px;
+}  
+
+.st-key-red2 button p{
+    font-size: 21px;
+}  
+
+.st-key-green button p{
+    font-size: 21px;
+}  
+
+.st-key-green2 button p{
+    font-size: 21px;
+}  
