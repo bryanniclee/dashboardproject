@@ -1,5 +1,5 @@
 import pandas as pd
-import redshift_connector
+#import redshift_connector
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
@@ -11,8 +11,8 @@ from datetime import datetime
 from glob import glob
 import plotly.express as px
 import pycountry
-import psycopg2
-import psycopg2.extras
+#import psycopg2
+#import psycopg2.extras
 st.set_page_config(layout="wide") 
 def classify_beverage(drink):
     if drink in coffee_based:
